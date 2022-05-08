@@ -17,7 +17,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Developer',
+            'role_id' => 1,
+            'first_name' => 'Florin Gheorghe',
+            'last_name' => 'Turcanu',
             'email' => 'fi@autodb.work',
             'password' => Hash::make('ctt')
         ]);
