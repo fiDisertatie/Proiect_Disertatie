@@ -108,7 +108,7 @@
                         >
 
                         @if (auth()->user()->role->role == "Admin")
-                            <a class="dropdown-item" href="{{ route('user.create') }}"
+                            <a class="dropdown-item" href="{{ route('users.create') }}"
                             ><i class="fa fa-user-plus me-1 ms-1"></i> Adauga Utilizator</a
                             >
                         @endif

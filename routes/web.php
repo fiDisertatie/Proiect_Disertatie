@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,8 +25,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
-    Route::get('/user/create', [UserController::class, 'create'])->name('user.create')->middleware('isAdmin');
-    Route::post('/user/store', [UserController::class, 'store'])->name('user.store')->middleware('isAdmin');
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    Route::get('/students/import', [StudentController::class, 'create_import'])->name('students.create.import');
+    Route::post('/students/import', [StudentController::class, 'import_excel'])->name('students.import.excel');
+    Route::post('/students/truncate', [StudentController::class, 'truncate'])->name('students.truncate');
+
+    Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
+    Route::get('/teachers/import', [TeacherController::class, 'create_import'])->name('teachers.create.import');
+    Route::post('/teachers/import', [TeacherController::class, 'import_excel'])->name('teachers.import.excel');
+    Route::post('/teachers/truncate', [TeacherController::class, 'truncate'])->name('teachers.truncate');
+
+    Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('isAdmin');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware('isAdmin');
+    Route::post('/users/store', [UserController::class, 'store'])->name('users.store')->middleware('isAdmin');
 
 });
 

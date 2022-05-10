@@ -14,7 +14,27 @@
                         href="{{ route('home.index') }}"
                         aria-expanded="false"
                     ><i class="mdi mdi-view-dashboard"></i
-                        ><span class="hide-menu">Acasa</span></a
+                        ><span class="hide-menu">Acasă</span></a
+                    >
+                </li>
+
+                <li class="sidebar-item">
+                    <a
+                        class="sidebar-link waves-effect waves-dark"
+                        href="{{ route('students.index') }}"
+                        aria-expanded="false"
+                    ><i class="fa fa-child"></i
+                        ><span class="hide-menu">Elevi</span></a
+                    >
+                </li>
+
+                <li class="sidebar-item">
+                    <a
+                        class="sidebar-link waves-effect waves-dark"
+                        href="{{ route('teachers.index') }}"
+                        aria-expanded="false"
+                    ><i class="fa fa-graduation-cap"></i
+                        ><span class="hide-menu">Cadre Didactice</span></a
                     >
                 </li>
 
@@ -22,14 +42,25 @@
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-file-excel"></i><span class="hide-menu">Import Date</span></a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="form-basic.html" class="sidebar-link"><i class="fa fa-child"></i><span class="hide-menu">Elevi</span></a>
+                            <a href="{{ route('students.create.import') }}" class="sidebar-link"><i class="fa fa-child"></i><span class="hide-menu">Elevi</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="form-wizard.html" class="sidebar-link"><i class="fa fa-graduation-cap"></i><span class="hide-menu">Cadre Didactice</span></a>
+                            <a href="{{ route('teachers.create.import') }}" class="sidebar-link"><i class="fa fa-graduation-cap"></i><span class="hide-menu">Cadre Didactice</span></a>
                         </li>
                     </ul>
                 </li>
 
+                @if (auth()->user()->role->role == "Admin")
+                    <li class="sidebar-item">
+                        <a
+                            class="sidebar-link waves-effect waves-dark"
+                            href="{{ route('users.index') }}"
+                            aria-expanded="false"
+                        ><i class="fa fa-users"></i
+                            ><span class="hide-menu">Utilizatori</span></a
+                        >
+                    </li>
+                @endif
 
             </ul>
         </nav>

@@ -20,7 +20,9 @@
     <!-- Custom CSS -->
     <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/libs/toastr/build/toastr.min.css') }}" rel="stylesheet" />
-
+    <link href="{{ asset('assets/extra-libs/multicheck/multicheck.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
 </head>
 
 <body>
@@ -68,7 +70,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer text-center">
-            All Rights Reserved Fi Steaua
+            Aplicație lucrare disertație Țurcanu Florin Gheorghe
 
         </footer>
         <!-- ============================================================== -->
@@ -109,6 +111,30 @@
 <script src="{{ asset('assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{ asset('assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{ asset('dist/js/pages/chart/chart-page-init.js')}}"></script>
+
+<script>
+    $( document ).ready(function() {
+        if ({{ Session::has('success') ? 1 : 0 }})
+        {
+            toastr.success("{{ Session::get('success') }}", "Succes");
+        }
+
+        if ({{ Session::has('info') ? 1 : 0 }})
+        {
+            toastr.info("{{ Session::get('info') }}", "Info");
+        }
+
+        if ({{ Session::has('warning') ? 1 : 0 }})
+        {
+            toastr.warning("{{ Session::get('warning') }}", "Avertizare");
+        }
+
+        if ({{ Session::has('danger') ? 1 : 0 }})
+        {
+            toastr.error("{{ Session::get('danger') }}", "Eroare");
+        }
+    });
+</script>
 
 @yield('custom-js')
 </body>

@@ -18,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -30,7 +31,7 @@ class UserController extends Controller
     {
         $roles = Role::orderBy('id', 'desc')->get();
 
-        return view('user.create', compact('roles'));
+        return view('users.create', compact('roles'));
     }
 
     /**

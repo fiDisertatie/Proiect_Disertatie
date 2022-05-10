@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                <form class="form-horizontal" method="POST" action="{{ route('user.store') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('users.store') }}">
                     @csrf
                     <div class="card-body">
                         <h4 class="card-title">Adăugare Utilizator</h4>
