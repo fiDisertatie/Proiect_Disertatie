@@ -22,6 +22,7 @@
     <link href="{{ asset('assets/libs/toastr/build/toastr.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/extra-libs/multicheck/multicheck.css') }}" rel="stylesheet"/>
     <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
 </head>
 

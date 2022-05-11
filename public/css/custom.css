@@ -1,5 +1,77 @@
+body {
+    font-family: DejaVu Sans, sans-serif;
+}
+
 .tutorial-image {
     box-shadow: 0 0 2px black;
     width:80%;
     padding: 0 0 2rem 0;
 }
+
+.date-row {
+    --bs-gutter-x: 0px !important;
+}
+
+.logo-ctt {
+    margin-top: -20px;
+    float: right;
+    width: 50px!important;
+    height: 50px!important;
+}
+
+.logo-ministerul-educatiei {
+    height: 70px;
+}
+
+.linie_logo {
+    color: black !important;
+    opacity: 1 !important;
+}
+
+.text-ctt-centru {
+    text-align: center;
+}
+
+.text-ctt-centru p {
+    color: black;
+    line-height: 30%;
+}
+
+.nr_data p {
+    margin-top: 10px;
+    color: black;
+}
+
+.head_adeverinta {
+    text-align: center;
+}
+
+.head_adeverinta p {
+    color: black;
+    font-size: 24px;
+}
+
+.text_adeverinta p {
+    color: black;
+}
+.text_adeverinta-p {
+    text-indent: 50px;
+}
+
+.director {
+    float:left;
+    text-align: center;
+}
+
+.secretar {
+    float:right;
+    text-align: center;
+}
+
+.semnatari div p {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 30%;
+}
+

@@ -15,4 +15,9 @@ class Teacher extends Model
     {
         return "{$this->nume} {$this->initiala}. {$this->prenume}";
     }
+
+    public function fullNameWithoutInitial ()
+    {
+        return "{$this->nume} {$this->prenume}";
+    }
 }
