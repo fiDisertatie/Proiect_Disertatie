@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\AdeverintaIncadrare;
+use App\Http\Controllers\AdeverintaAbsolvireController;
+use App\Http\Controllers\AdeverintaElevController;
+use App\Http\Controllers\AdeverintaIncadrareController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -31,12 +33,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/students/import', [StudentController::class, 'import_excel'])->name('students.import.excel');
     Route::post('/students/truncate', [StudentController::class, 'truncate'])->name('students.truncate');
 
+    Route::get('/students/{student}/adeverinta-elev', [AdeverintaElevController::class, 'create'])->name('students.generate.adeverinta.elev');
+    Route::post('/students/adeverinta-elev', [AdeverintaElevController::class, 'store'])->name('students.store.adeverinta.elev');
+
+    Route::get('/students/{student}/adeverinta-absolvire', [AdeverintaAbsolvireController::class, 'create'])->name('students.generate.adeverinta.absolvire');
+    Route::post('/students/adeverinta-absolvire', [AdeverintaAbsolvireController::class, 'store'])->name('students.store.adeverinta.absolvire');
+
     Route::get('/teachers', [TeacherController::class, 'index'])->name('teachers.index');
     Route::get('/teachers/import', [TeacherController::class, 'create_import'])->name('teachers.create.import');
     Route::post('/teachers/import', [TeacherController::class, 'import_excel'])->name('teachers.import.excel');
     Route::post('/teachers/truncate', [TeacherController::class, 'truncate'])->name('teachers.truncate');
-    Route::get('/teachers/{teacher}/adeverinta-incadrare', [AdeverintaIncadrare::class, 'create'])->name('teachers.generate.adeverinta');
-    Route::post('/teachers/adeverinta-incadrare', [AdeverintaIncadrare::class, 'store'])->name('teachers.store.adeverinta');
+
+    Route::get('/teachers/{teacher}/adeverinta-incadrare', [AdeverintaIncadrareController::class, 'create'])->name('teachers.generate.adeverinta');
+    Route::post('/teachers/adeverinta-incadrare', [AdeverintaIncadrareController::class, 'store'])->name('teachers.store.adeverinta');
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index')->middleware('isAdmin');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create')->middleware('isAdmin');

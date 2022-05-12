@@ -28,10 +28,10 @@
                                     <td>{{ $student->tip_formatiune }}</td>
                                     <td>{{ $student->nume_clasa }}</td>
                                     <td>
-                                        <a  class="btn btn-primary d-block m-2" href="#">
+                                        <a  class="btn btn-primary d-block m-2" href="{{ route('students.generate.adeverinta.elev', $student->id) }}">
                                             Adeverință Elev
                                         </a>
-                                        <a  class="btn btn-info d-block m-2" href="#">
+                                        <a  class="btn btn-info d-block m-2" href="{{ route('students.generate.adeverinta.absolvire', $student->id) }}">
                                             Adeverință de Absolvire
                                         </a>
                                     </td>

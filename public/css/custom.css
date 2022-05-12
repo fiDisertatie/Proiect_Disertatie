@@ -47,15 +47,22 @@ body {
 }
 
 .head_adeverinta p {
+    line-height: 30%;
     color: black;
     font-size: 24px;
 }
 
-.text_adeverinta p {
+.text-adeverinta-p {
+    text-indent: 50px;
+    line-height: normal !important;
     color: black;
 }
-.text_adeverinta-p {
+
+.text-adeverinta-absolvire-p {
     text-indent: 50px;
+    line-height: normal !important;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .director {

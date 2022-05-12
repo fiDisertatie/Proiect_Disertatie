@@ -4,7 +4,15 @@
 @section('page-title', 'Acasă')
 
 @section('content')
-    <h2>Buna eu sunt pagina acasa</h2>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-info">
+                <h2 class="text-center text-white mt-2">Aplicație eliberare documente școlare</h2>
+                <h3 class="text-center text-white">învățământ preuniversitar.</h3>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

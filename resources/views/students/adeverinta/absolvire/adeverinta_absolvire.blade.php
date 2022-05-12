@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8" />
 
-        <title>{{ $teacher->fullName() }}</title>
+        <title>{{ $student->fullName() }}</title>
 
         <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
@@ -22,16 +22,17 @@
         <p>http://www.cttransporturineamt.ro</p>
     </div>
     <div class="nr_data">
-        <p><strong>Nr. {{ $teacher->nr_inregistrare }} din {{ $teacher->data_generare }}</strong></p>
+        <p><strong>Nr. {{ $student->nr_inregistrare }} din {{ $student->data_generare }}</strong></p>
     </div>
     <br>
     <div class="head_adeverinta">
         <p><strong>ADEVERINŢĂ</strong></p>
+        <p><strong>DE ABSOLVIRE A STUDIILOR</strong></p>
     </div>
     <br>
     <div class="text_adeverinta">
-        <p class="text-adeverinta-p">Adeverim prin prezenta că <strong>{{ $teacher->fullNameWithoutInitial() }}</strong> este cadru didatic {{ mb_strtolower($teacher->statut) }} la {{ ucwords(mb_strtolower($teacher->denumire_unitate)) }} pe catedra de {{ ucwords(mb_strtolower($teacher->disciplina_incadrare)) }}.</p>
-        <p class="text-adeverinta-p">Eliberăm prezenta pentru a-i servi la {{ $teacher->foloseste_la }}.</p>
+        <p class="text-adeverinta-p">Prin prezenta, se adeverește că <strong>{{ $student->fullNameWithoutInitial() }}</strong> născut în {{ ucwords(mb_strtolower($student->localitate_nastere)) }} la data de {{ $student->data_nastere }}, CNP {{ $student->cnp }}, a absolvit învățământul {{ $student->nivel_invatamant }}/{{ $student->forma_invatamant }} în meseria/specializarea/calificarea profesională {{ $student->specializare_calificare }} la {{ ucwords(mb_strtolower($student->denumire_unitate)) }} în anul 2022 cu/fără examen de certificare a competențelor profesionale nivel 3.</p>
+        <p class="text-adeverinta-p">Prezenta adeverință se eliberează pentru a-i servi la {{ $student->foloseste_la }}.</p>
     </div>
     <br>
     <br>

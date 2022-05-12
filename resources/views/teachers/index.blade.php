@@ -30,7 +30,7 @@
                                     <td>{{ $teacher->categorie_personal }}</td>
                                     <td>{{ $teacher->disciplina_incadrare }}</td>
                                     <td>
-                                        <a  class="btn btn-primary" href="{{ route('teachers.generate.adeverinta', $teacher->id) }}">
+                                        <a  class="btn btn-success text-white" href="{{ route('teachers.generate.adeverinta', $teacher->id) }}">
                                             Adeverință Încadrare
                                         </a>
                                     </td>

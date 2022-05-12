@@ -1,19 +1,19 @@
 @extends('layouts.admin')
 
-@section('title', 'Generare Adeverinta Incadrare')
-@section('page-title', 'Generare Adeverinta Incadrare')
+@section('title', 'Generare Adeverinta Elev')
+@section('page-title', 'Generare Adeverinta Elev')
 
 @section('content')
     <div class="row mt-4">
         <div class="col-md-6">
-            <form enctype="multipart/form-data" action="{{ route('teachers.store.adeverinta') }}" method="POST">
+            <form enctype="multipart/form-data" action="{{ route('students.store.adeverinta.elev') }}" method="POST">
                 @csrf
 
-                <input value="{{ $teacher->id }}" type="hidden" name="teacher_id" >
+                <input value="{{ $student->id }}" type="hidden" name="student_id" >
 
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title pb-3">Generare Adeverinta Incadrare pentru {{ $teacher->fullName() }}</h4>
+                        <h4 class="card-title pb-3">Generare Adeverinta Elev pentru {{ $student->fullName() }}</h4>
 
                         <div class="form-group row">
                             <label for="nr_inregistrare" class="col-sm-3 text-end control-label col-form-label">Nr. Inregistrare</label>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="border-top">
                         <div class="card-body">
-                            <button type="submit" class="btn btn-success text-white">
+                            <button type="submit" class="btn btn-primary text-white">
                                 Generează
                             </button>
                         </div>

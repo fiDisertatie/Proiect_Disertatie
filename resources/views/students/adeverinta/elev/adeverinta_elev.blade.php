@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8" />
 
-        <title>{{ $teacher->fullName() }}</title>
+        <title>{{ $student->fullName() }}</title>
 
         <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
@@ -22,7 +22,7 @@
         <p>http://www.cttransporturineamt.ro</p>
     </div>
     <div class="nr_data">
-        <p><strong>Nr. {{ $teacher->nr_inregistrare }} din {{ $teacher->data_generare }}</strong></p>
+        <p><strong>Nr. {{ $student->nr_inregistrare }} din {{ $student->data_generare }}</strong></p>
     </div>
     <br>
     <div class="head_adeverinta">
@@ -30,8 +30,8 @@
     </div>
     <br>
     <div class="text_adeverinta">
-        <p class="text-adeverinta-p">Adeverim prin prezenta că <strong>{{ $teacher->fullNameWithoutInitial() }}</strong> este cadru didatic {{ mb_strtolower($teacher->statut) }} la {{ ucwords(mb_strtolower($teacher->denumire_unitate)) }} pe catedra de {{ ucwords(mb_strtolower($teacher->disciplina_incadrare)) }}.</p>
-        <p class="text-adeverinta-p">Eliberăm prezenta pentru a-i servi la {{ $teacher->foloseste_la }}.</p>
+        <p class="text-adeverinta-p">Elevul <strong>{{ $student->fullNameWithoutInitial() }}</strong> este  înscris în {{ lcfirst($student->tip_formatiune) }} {{ $student->nume_clasa }}, anul școlar 2021-2022 şi frecventează cursurile la învăţământul {{ $student->nivel_invatamant }}/{{ $student->forma_invatamant }}.</p>
+        <p class="text-adeverinta-p">Adeverinţa serveşte la {{ $student->foloseste_la }}.</p>
     </div>
     <br>
     <br>
