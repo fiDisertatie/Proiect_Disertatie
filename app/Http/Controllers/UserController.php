@@ -53,7 +53,7 @@ class UserController extends Controller
             'password' => $user['password']
         ]);
 
-        return redirect()->route('home.index')->with('success', "User creat cu succes!");
+        return redirect()->route('users.index')->with('success', "User creat cu succes!");
     }
 
     /**

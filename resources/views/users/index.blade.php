@@ -16,6 +16,7 @@
                                     <th>Nume</th>
                                     <th>Prenume</th>
                                     <th>Email</th>
+                                    <th>Rol</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,7 @@
                                         <td>{{ $user->last_name }}</td>
                                         <td>{{ $user->first_name }}</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>{{ $user->role->role }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

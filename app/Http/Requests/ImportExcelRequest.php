@@ -27,7 +27,6 @@ class ImportExcelRequest extends FormRequest
             'excel_file' => "required|mimes:xlsx"
         ];
     }
-
     public function messages()
     {
         return [
